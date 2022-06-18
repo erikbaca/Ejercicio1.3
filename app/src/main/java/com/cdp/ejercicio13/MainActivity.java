@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         limpiar();
     }
 
+
     private void limpiar()
     {
         txtnombres.setText("");
