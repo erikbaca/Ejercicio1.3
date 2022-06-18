@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
     private void elementos()
     {
         txtnombres = (EditText) findViewById(R.id.txtnombres);
@@ -45,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
 
         btnagregar = (Button) findViewById(R.id.btnagregar);
     }
-
 
     private void AgregarPersona()
     {
@@ -68,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
 
         limpiar();
     }
-
 
     private void limpiar()
     {
