@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         btnagregar = (Button) findViewById(R.id.btnagregar);
     }
 
+
     private void AgregarPersona()
     {
         // Creamos la conexion e insercion a la BDD
