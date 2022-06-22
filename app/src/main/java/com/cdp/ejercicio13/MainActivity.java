@@ -3,6 +3,7 @@ package com.cdp.ejercicio13;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -15,7 +16,7 @@ import com.cdp.ejercicio13.Procesos.personas;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnagregar;
+    Button btnagregar, btnsiguientepagina;
     EditText txtnombres, txtapellidos, txtedad, txtcorreo, txtdireccion;
 
     @Override
@@ -33,18 +34,26 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnsiguientepagina.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ActivityConsulta.class));
+            }
+        });
+
     }
 
 
     private void elementos()
     {
         txtnombres = (EditText) findViewById(R.id.txtnombres);
-        txtapellidos = (EditText) findViewById(R.id.txtapellidos);
+        txtapellidos = (EditText) findViewById(R.id.txtcapellidos);
         txtedad = (EditText) findViewById(R.id.txtedad);
         txtcorreo = (EditText) findViewById(R.id.txtcorreo);
         txtdireccion = (EditText) findViewById(R.id.txtdireccion);
 
         btnagregar = (Button) findViewById(R.id.btnagregar);
+        btnsiguientepagina = (Button) findViewById(R.id.btnsiguientepagina);
     }
 
     private void AgregarPersona()

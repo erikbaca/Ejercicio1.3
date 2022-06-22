@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/txtapellidos"
+        android:id="@+id/txtcapellidos"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -88,4 +88,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.313" />
+
+    <Button
+        android:id="@+id/btnsiguientepagina"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Consulta de Informacion"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.814" />
 </androidx.constraintlayout.widget.ConstraintLayout>

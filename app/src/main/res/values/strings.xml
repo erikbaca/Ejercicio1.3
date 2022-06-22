@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Ejercicio1.3</string>
+    <string name="txt_nombres">Nombres</string>
+    <string name="txt_apellidos">Apellidos</string>
+    <string name="txt_edad">Edad</string>
+    <string name="txt_correo">Correo</string>
+    <string name="txt_direccion">Direccion</string>
 </resources>
