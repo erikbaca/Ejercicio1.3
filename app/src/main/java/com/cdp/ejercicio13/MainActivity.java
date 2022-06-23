@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
     long resultado = db.insert(personas.tablaPersonas, personas.id, datos);
 
-        Toast.makeText(getApplicationContext(), "Registro Ingresado con Exito :)", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "Registro Ingresado Exitosamente !!", Toast.LENGTH_LONG).show();
 
         db.close();
 

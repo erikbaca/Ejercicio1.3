@@ -1,7 +1,11 @@
 package com.cdp.ejercicio13.Procesos;
 
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+
 public class personas
 {
+    SQLiteConexion conexion;
     // Nombre de la BDD
     public static final String NameDatabase = "DBPM01";
 
@@ -22,5 +26,7 @@ public class personas
                                                      "direccion TEXT)";
 
     public static final String DroptablePersonas = "DROP TABLE IF EXISTS personasT";
+
+
 
 }

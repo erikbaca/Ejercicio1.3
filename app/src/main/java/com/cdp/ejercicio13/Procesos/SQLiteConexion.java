@@ -25,4 +25,6 @@ public class SQLiteConexion extends SQLiteOpenHelper
             db.execSQL(personas.DroptablePersonas);
             onCreate(db);
     }
+
+
 }
