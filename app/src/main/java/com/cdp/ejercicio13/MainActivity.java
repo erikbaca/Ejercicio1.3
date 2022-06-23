@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cdp.ejercicio13.Procesos.SQLiteConexion;
@@ -62,20 +64,58 @@ public class MainActivity extends AppCompatActivity {
         SQLiteConexion conexion = new SQLiteConexion(this, personas.NameDatabase, null, 1);
         SQLiteDatabase db = conexion.getWritableDatabase();
 
-        ContentValues datos = new ContentValues();
-        datos.put(personas.nombres, txtnombres.getText().toString());
-        datos.put(personas.apellidos, txtapellidos.getText().toString());
-        datos.put(personas.edad, txtedad.getText().toString());
-        datos.put(personas.correo, txtcorreo.getText().toString());
-        datos.put(personas.direccion, txtdireccion.getText().toString());
 
-    long resultado = db.insert(personas.tablaPersonas, personas.id, datos);
+        try {
+            String resu = "";
+            //tenemos que comprobar que se haya seleccionado alguna operacion a realizar.
 
-        Toast.makeText(getApplicationContext(), "Registro Ingresado Exitosamente !!", Toast.LENGTH_LONG).show();
+                if (txtnombres.getText().toString().isEmpty()) {
+                    resu = "Upps!!, ingrese el nombre del registro";
+                    Toast.makeText(getApplicationContext(), resu, Toast.LENGTH_LONG).show();
+                } else {
+                    if (txtapellidos.getText().toString().isEmpty()) {
+                        resu = "Upps!!, ingrese el apellido";
+                        Toast.makeText(getApplicationContext(), resu, Toast.LENGTH_LONG).show();
+                    } else {
+                        if (txtedad.getText().toString().isEmpty()) {
+                            resu = "Favor, ingrese una nota :)!";
+                            Toast.makeText(getApplicationContext(), resu, Toast.LENGTH_LONG).show();
+                        } else {
+                            if (txtcorreo.getText().toString().isEmpty())
+                            {
+                                resu = "Favor, ingrese un correo :)!";
+                                Toast.makeText(getApplicationContext(), resu, Toast.LENGTH_LONG).show();
+                            }
+                            else{
+                                if (txtdireccion.getText().toString().isEmpty())
+                                {
+                                    resu="Favor, ingrese una direccion :)!";
+                                    Toast.makeText(getApplicationContext(), resu, Toast.LENGTH_LONG).show();
+                                }else{
 
-        db.close();
+                            ContentValues datos = new ContentValues();
+                            datos.put(personas.nombres, txtnombres.getText().toString());
+                            datos.put(personas.apellidos, txtapellidos.getText().toString());
+                            datos.put(personas.edad, txtedad.getText().toString());
+                            datos.put(personas.correo, txtcorreo.getText().toString());
+                            datos.put(personas.direccion, txtdireccion.getText().toString());
+                            Long resultado = db.insert(personas.tablaPersonas, personas.id, datos);
 
-        limpiar();
+                            // Creamos un Toas para que muestre en pantalla que se ha salvado correctamente el contacto
+                            Toast.makeText(getApplicationContext(), " Registro (" + resultado.toString() + ") Ingresado Correctamente :)", Toast.LENGTH_LONG).show();
+
+                            db.close();
+                            limpiar();
+                                }
+
+                            }
+                        }
+                    }
+                }
+        } catch (Exception e) {
+            System.out.println("Error!! Exception: " + e);
+        }
+
     }
 
     private void limpiar()
